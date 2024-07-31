@@ -1,0 +1,132 @@
+{
+    "Generate Layout file": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "layout",
+      "body": [
+        "import { ReactNode } from 'react';",
+        "",
+        "export default function ${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/}Layout({",
+        "  children,",
+        "}: {",
+        "  children: ReactNode;",
+        "}): ReactNode {",
+        "  return <div>{children}</div>;",
+        "};",
+        "",
+      ],
+      "description": "Generate NextJs Layout File"
+    },
+    "Generate Page file": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "page",
+      "body": [
+        "import { ReactNode } from 'react';",
+        "",
+        "export default function ${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/}Page(): ReactNode {",
+        "  return <div>${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/} Page</div>;",
+        "};",
+        "",
+      ],
+      "description": "Generate NextJs Page File"
+    },
+    "Generate Loading file": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "loading",
+      "body": [
+        "import { ReactNode } from 'react';",
+        "",
+        "export default function ${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/}Loader(): ReactNode {",
+        "  return <div>${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/} Loader</div>;",
+        "};",
+        "",
+      ],
+      "description": "Generate NextJs Loader File"
+    },
+    "Generate Error file": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "err",
+      "body": [
+        "'use client';",
+        "import { ReactNode, useEffect } from 'react';",
+
+        "export default function ErrorBoundary({",
+        "  error,",
+        "  reset,",
+        "}: {",
+        "  error: Error & { digest?: string };",
+        "  reset: () => void;",
+        "}): ReactNode {",
+        "",
+        "  useEffect(() => {",
+        "    console.log(error);",
+        "  }, [error]);",
+        "",
+        "  return (",
+        "    <div>Error Loading page</div>",
+        "  );",
+        "}",
+        ""
+      ],
+      "description": "Generate NextJs Error boundary File"
+    },
+    "Generate Component file": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "comp",
+      "body": [
+        "import { ReactNode } from 'react';",
+        "",
+        "export default function ${TM_FILENAME_BASE}(): ReactNode {",
+        "  return <div>${TM_FILENAME_BASE} Component</div>;",
+        "};",
+        "",
+      ],
+      "description": "Generate NextJs Component File"
+    },
+    "Generate GET Handler": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "geth",
+      "body": [
+        "export async function GET(request: Request) {",
+        "",
+        "  return new Response();",
+        "}",
+      ],
+      "description": "NextJs GET Route Handler",
+    },
+    "Generate POST Handler": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "posth",
+      "body": [
+        "export async function POST(request: Request) {",
+        "  const res = await request.json();",
+        "",
+        "  return new Response();",
+        "}",
+      ],
+      "description": "NextJs POST Route Handler",
+    },
+    "Generate PATCH Handler": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "patch",
+      "body": [
+        "export async function POST(request: Request, { params }) {",
+        "  const res = await request.json();",
+        "",
+        "  return new Response();",
+        "}",
+      ],
+      "description": "NextJs PATCH Route Handler",
+    },
+    "Generate DELETE Handler": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "delete",
+      "body": [
+        "export async function DELETE(request: Request, { params }) {",
+        "  const res = await request.json();",
+        "",
+        "  return new Response();",
+        "}",
+      ],
+      "description": "NextJs DELETE Route Handler",
+    },
+  }
