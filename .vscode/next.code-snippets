@@ -29,6 +29,19 @@
       ],
       "description": "Generate NextJs Page File"
     },
+    "Generate Async Page file": {
+      "scope": "javascript,typescript,typescriptreact",
+      "prefix": "pagea",
+      "body": [
+        "import { ReactNode } from 'react';",
+        "",
+        "export default async function ${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/}Page(): Promise<ReactNode> {",
+        "  return <div>${TM_DIRECTORY/^.+\\\\(.*)$/${1:/capitalize}/} Page</div>;",
+        "};",
+        "",
+      ],
+      "description": "Generate NextJs Page File"
+    },
     "Generate Loading file": {
       "scope": "javascript,typescript,typescriptreact",
       "prefix": "loading",
